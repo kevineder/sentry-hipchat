@@ -84,7 +84,7 @@ class HipchatMessage(NotifyPlugin):
         is_muted = group.is_muted()
 
         if token and room and not is_muted:
-            self.send_payload(token, room, '[%(level)s]%(server_name)s | %(project_name)s %(message)s [<a href="%(link)s">view on sentry</a>]' % {
+            self.send_payload(token, room, '[%(level)s]%(server_name)s |%(project_name)s %(message)s [<a href="%(link)s">view on sentry</a>]' % {
                 'server_name': (' <strong>%s</strong>' % event.server_name) if event.server_name else '',
                 'level': level,
                 'project_name': (' <strong>%s</strong>' % event.project.name) if include_project_name else '',
